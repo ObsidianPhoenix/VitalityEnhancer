@@ -41,11 +41,7 @@ function BuildPointCollection() {
     for (var i = 0; i < data.length; i++) {
         var entry = data[i];
         var points = $(entry).find("span.points").attr("data-memberpointsval");
-
-        if (points <= 0) {
-            continue;
-        }
-        
+       
         var entryDateText = $(entry).find("h3.date").text();
 
         var date = GetDateForEntry(entryDateText);
@@ -69,7 +65,7 @@ function AddToWeeklySummary(date, points, entry) {
     var startOfWeek = GetStartOfWeek(date);
     var intPoints = parseInt(points);
     
-    //console.log("Adding " + intPoints + " From " + date + " to Week: " + startOfWeek);
+    console.log("Adding " + intPoints + " From " + date + " to Week: " + startOfWeek);
 
     if (summaryData[startOfWeek] == null) {
         summaryData[startOfWeek] = { Points: intPoints, LastRecord: date, htmlItem: $(entry) };
@@ -90,7 +86,7 @@ function AddToWeeklySummary(date, points, entry) {
             item = $(entry);
         }
 
-        //console.log("Summary already exists for " + startOfWeek + ". Current Points: " + currentPoints + ". New Points: " + newPoints + ".");
+        console.log("Summary already exists for " + startOfWeek + ". Current Points: " + currentPoints + ". New Points: " + newPoints + ".");
 
         summaryData[startOfWeek] = { Points: newPoints, LastRecord: lastRecord, htmlItem: item };
     }
