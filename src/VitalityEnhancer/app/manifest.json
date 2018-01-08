@@ -3,7 +3,7 @@
 
     "name": "Vitality Enhancer",
     "description": "This extension provides additional enhancements for the Vitality members portal.",
-    "version": "1.0",
+    "version": "1.1",
 
     "content_scripts": [
     {
